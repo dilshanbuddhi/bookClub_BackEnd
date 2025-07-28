@@ -64,3 +64,16 @@ export const getLendingsByNotOverdue = async (req: Request, res: Response, next:
         next(err)
     }
 }
+
+export const markAsReturned = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+        const lending = await LendingModel.findByIdAndUpdate(
+            req.params.id,
+            { status: 'returned' }, // ✅ fix here
+            { new: true }
+        );
+        res.status(200).json(lending);
+    } catch (err) {
+        next(err);
+    }
+};
