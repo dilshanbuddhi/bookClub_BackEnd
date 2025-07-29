@@ -4,6 +4,7 @@ import readerRoutes from "./reader.routes";
 import bookRoutes from "./book.routes";
 import lendingRoutes from "./Lending.routes";
 import emailRoutes from "./email.routes";
+import userRoutes from "./user.routes";
 
 
 const rootRoutes = Router();
@@ -12,6 +13,8 @@ rootRoutes.use("/reader", readerRoutes)
 rootRoutes.use("/book", bookRoutes)
 rootRoutes.use("/lending", lendingRoutes)
 rootRoutes.use("/email", emailRoutes)
+rootRoutes.use("/user", userRoutes)
+
 
 
 export default rootRoutes;
